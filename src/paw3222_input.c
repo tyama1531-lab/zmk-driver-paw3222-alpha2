@@ -242,6 +242,20 @@ void paw32xx_motion_work_handler(struct k_work *work) {
     LOG_ERR("XY data read failed: %d", ret);
     goto cleanup;
   }
+  // --- ここに追加 ---
+  #include <zmk/input/input_event.h>
+
+  struct sensor_input_event event = {
+      .sensor_node = dev,
+      .timestamp = k_uptime_get(),
+      .data = {
+          .x = x,
+          .y = y,
+      },
+  };
+
+  ZMK_INPUT_EVENT(event);
+  // --- ここまで追加 ---
 
   // For scroll modes, we need to transform coordinates based on rotation
   // to ensure y-axis movement always triggers scroll regardless of sensor
