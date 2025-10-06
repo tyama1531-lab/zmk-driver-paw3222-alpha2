@@ -133,3 +133,5 @@ int paw32xx_read_xy(const struct device *dev, int16_t *x, int16_t *y) {
 
     return 0;
 }
+
+// ソースの中身を見ることができているか？ 確認用コメント
