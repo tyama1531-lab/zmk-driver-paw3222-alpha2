@@ -13,3 +13,4 @@ if(CONFIG_PAW3222)
     zephyr_include_directories(${APPLICATION_SOURCE_DIR}/include)
 
 endif()
+
