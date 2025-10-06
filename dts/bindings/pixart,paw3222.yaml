@@ -123,3 +123,8 @@ properties:
       Method for switching input modes:
       - "layer": Use ZMK layers (original method)
       - "toggle": Use toggle key behavior
+      
+  input-processors:
+    type: phandle-array
+    required: false
+    description: List of input processors to apply to sensor data
